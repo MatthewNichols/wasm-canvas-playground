@@ -1,12 +1,14 @@
 # You must change these to your own details.
 [package]
-name = "rust-webpack-template"
-description = "My super awesome Rust, WebAssembly, and Webpack project!"
+name = "wasm-canvas-playground"
+description = "A space to explore programming HTML Canvas drawing with most of the coding happening in Rust/WebAssembly."
 version = "0.1.0"
-authors = ["You <you@example.com>"]
+authors = ["Matthew Nichols <matthew@matthew-nichols.com>"]
 categories = ["wasm"]
 readme = "README.md"
 edition = "2018"
+repository = "https://github.com/MatthewNichols/wasm-canvas-playground"
+license = "MIT License"
 
 [lib]
 crate-type = ["cdylib"]

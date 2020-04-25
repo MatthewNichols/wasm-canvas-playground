@@ -1,6 +1,12 @@
 {
-  "author": "You <you@example.com>",
-  "name": "rust-webpack-template",
+  "author": "matthew@matthew-nichols.com",
+  "name": "wasm-canvas-playground",
+  "description": "A space to explore programming HTML Canvas drawing with most of the coding happening in Rust/WebAssembly.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MatthewNichols/wasm-canvas-playground"
+  },
+  "license": "MIT",
   "version": "0.1.0",
   "scripts": {
     "build": "rimraf dist pkg && webpack",
