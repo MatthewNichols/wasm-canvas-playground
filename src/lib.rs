@@ -1,6 +1,7 @@
 use wasm_bindgen::prelude::*;
 use web_sys::console;
 
+mod js_bridge;
 
 // When the `wee_alloc` feature is enabled, this uses `wee_alloc` as the global
 // allocator.
@@ -22,6 +23,9 @@ pub fn main_js() -> Result<(), JsValue> {
 
     // Your code goes here!
     console::log_1(&JsValue::from_str("Hello world!"));
+
+    js_bridge::init("canvas1", 1000, 1000);
+    js_bridge::draw_circle(500, 500, 200, 255, 128, 128, 1.0);
 
     Ok(())
 }
