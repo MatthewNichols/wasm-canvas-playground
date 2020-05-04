@@ -1,7 +1,6 @@
 use wasm_bindgen::prelude::*;
 // use web_sys::{ console };
 
-mod js_bridge;
 mod drawings;
 
 // When the `wee_alloc` feature is enabled, this uses `wee_alloc` as the global
