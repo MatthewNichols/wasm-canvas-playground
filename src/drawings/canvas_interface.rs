@@ -43,7 +43,6 @@ impl CanvasInterface {
         self.context.begin_path();
         self.context.arc(center_x, center_y, radius, 0.0, PI * 2.0).ok();
         let fill_style = &JsValue::from_str(&format!("rgba({}, {}, {}, {})", color_r, color_g, color_b, color_a));
-        console::log_1(fill_style);
         self.context.set_fill_style(fill_style);
         self.context.fill();
     }
