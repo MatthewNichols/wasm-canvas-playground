@@ -1,7 +1,7 @@
 use core::f64::consts::PI;
 use wasm_bindgen::prelude::*;
 use wasm_bindgen::JsCast;
-use web_sys::{ console, Window, Document, Element, 
+use web_sys::{ console, Document, Element, 
     HtmlCanvasElement, CanvasRenderingContext2d };
 
 pub struct CanvasInterface {
@@ -19,12 +19,12 @@ impl CanvasInterface {
 
         let context = match canvas.get_context("2d") {
             Ok(c) => c.unwrap().dyn_into::<CanvasRenderingContext2d>(),
-            Err(error) => panic!("No Context")
+            Err(_error) => panic!("No Context")
         };
 
         let context = match context {
             Ok(c) => c,
-            Err(error) => panic!("No Context")
+            Err(_error) => panic!("No Context")
         };
 
         CanvasInterface {
@@ -41,7 +41,7 @@ impl CanvasInterface {
     
     pub fn draw_circle(&self, center_x: f64, center_y: f64, radius: f64, color_r: u8, color_g: u8, color_b: u8, color_a: f32) {
         self.context.begin_path();
-        self.context.arc(center_x, center_y, radius, 0.0, PI * 2.0);
+        self.context.arc(center_x, center_y, radius, 0.0, PI * 2.0).ok();
         let fill_style = &JsValue::from_str(&format!("rgba({}, {}, {}, {})", color_r, color_g, color_b, color_a));
         console::log_1(fill_style);
         self.context.set_fill_style(fill_style);
