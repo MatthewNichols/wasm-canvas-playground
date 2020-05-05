@@ -3,6 +3,7 @@ use web_sys::{ console, Window };
 
 mod canvas_interface;
 mod basic_circle;
+mod random_spray;
 
 use canvas_interface::CanvasInterface;
 
@@ -16,6 +17,7 @@ pub fn draw(window: Window) {
 
     match drawing_requested.as_str() {
         "basic_circle" => basic_circle::draw(canvas_interface),
+        "random_spray" => random_spray::draw(canvas_interface),
         _ => println!("no match")
     }   
 }
